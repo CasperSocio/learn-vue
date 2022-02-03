@@ -4,6 +4,7 @@ import { TSize } from '../typings/types'
 import Link from '../components/Link.vue'
 import Button from '../components/Button.vue'
 import Header from '../components/Header.vue'
+import Cart from '../features/cart/Cart.vue'
 
 type Size = SizeObject[]
 
@@ -109,7 +110,8 @@ export default defineComponent({
   components: {
     Button,
     Link,
-    Header
+    Header,
+    Cart
 }
 })
 </script>
@@ -130,7 +132,7 @@ export default defineComponent({
   </div>
 </aside>
 
-<main class="product-display">
+<main class="product-display flex flex-col flex-center">
   <div class="product-container flex flex-row">
 
     <!-- Layout left -->
@@ -162,7 +164,7 @@ export default defineComponent({
 
     <section class="product-info flex flex-col">
       <!-- Header -->
-      <header class="product-header flex flex-row flex-top">
+      <header class="product-header flex flex-row flex-space flex-top">
         <!-- Title -->
         <h1>{{ product }}</h1>
 
@@ -206,4 +208,20 @@ export default defineComponent({
     </section>
   </div>
 </main>
+<Cart />
 </template>
+
+<style scoped>
+main {
+  height: 100%;
+  padding: 2rem;
+}
+
+.product-container {
+  gap: 3rem;
+  max-width: var(--page-width);
+}
+.product-image {
+  max-width: 300px;
+}
+</style>

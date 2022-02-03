@@ -62,18 +62,6 @@ ul {
   opacity:0.5
 }
 
-.product-display {
-  padding: 2rem;
-}
-.product-container {
-  gap: 3rem;
-}
-
-.product-header {
-  align-items: baseline;
-  justify-content: space-between;
-}
-
 .product-image {
   gap: 2rem;
   max-width: 30%;
@@ -84,9 +72,6 @@ ul {
   border: 2px solid #d8d8d8;
   box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
   width: 100%;
-}
-.product-info {
-  max-width: 50%;
 }
 
 .review-form {

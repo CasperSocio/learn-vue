@@ -12,8 +12,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <header>
-    <h1>{{ brandName }}</h1>
+  <header class="flex flex-col flex-center">
+    <div class="container flex flex-row">
+      <h1>{{ brandName }}</h1>
+    </div>
   </header>
 </template>
 
@@ -25,6 +27,6 @@ header {
 h1 {
   font-size: 2rem;
   font-weight: 600;
-  padding: .6rem 2rem;
+  padding: .6rem 0;
 }
 </style>

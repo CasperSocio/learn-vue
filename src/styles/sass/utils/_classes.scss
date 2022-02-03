@@ -1,3 +1,12 @@
+.container {
+  max-width: var(--page-width);
+  width: 100%;
+}
+.container-full {
+  max-width: 100%;
+  width: 100%;
+}
+
 .danger {
   color: var(--danger);
 }
@@ -28,6 +37,9 @@
 }
 .flex-row {
   flex-direction: row;
+  &.flex-bottom {
+    align-items: baseline;
+  }
   &.flex-center {
     justify-content: center;
   }
@@ -36,6 +48,9 @@
   }
   &.flex-middle {
     align-items: center;
+  }
+  &.flex-space {
+    justify-content: space-between;
   }
   &.flex-top {
     align-items: flex-start;
