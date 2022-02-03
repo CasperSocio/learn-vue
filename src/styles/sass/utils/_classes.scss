@@ -1,0 +1,81 @@
+.danger {
+  color: var(--danger);
+}
+
+*[class*='debug'] {
+  outline: 1px solid currentColor;
+  outline-offset: 0;
+}
+.debug,
+.debug-magenta {
+  outline-color: magenta;
+}
+.debug-teal {
+  outline-color: teal;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+  &.flex-center {
+    align-items: center;
+  }
+  &.flex-middle {
+    justify-content: center;
+  }
+}
+.flex-row {
+  flex-direction: row;
+  &.flex-center {
+    justify-content: center;
+  }
+  &.flex-end {
+    justify-content: flex-end;
+  }
+  &.flex-middle {
+    align-items: center;
+  }
+  &.flex-top {
+    align-items: flex-start;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.show {
+  visibility: visible;
+}
+
+.success {
+  color: var(--success);
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.warning {
+  color: var(--warning);
+}

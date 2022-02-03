@@ -77,14 +77,14 @@ export default defineComponent({
       const currentInventory = this.inventory - this.cart;
       if (currentInventory > 10) {
         this.stockStatus = "success";
-        return "IN STOCK";
+        return "In stock";
       }
       if (currentInventory <= 10 && currentInventory > 0) {
         this.stockStatus = "warning";
-        return "ALMOST OUT OF STOCK";
+        return "Almost out of stock";
       }
       this.stockStatus = "danger";
-      return "OUT OF STOCK";
+      return "Out of stock";
     }
   },
   methods: {
@@ -117,16 +117,10 @@ export default defineComponent({
 <template>
 <Navbar brand-name="Socio" />
 
-<section class="top">
-  <!-- Back button -->
-  <button class="btn-nav">
-    <img src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png" alt="">
-    back
-  </button>
-
+<aside class="top flex flex-row flex-end">
   <!-- Cart -->
   <div
-    :class="['cart', (cart < 1) && 'hide']"
+    :class="['cart flex flex-row flex-middle', (cart < 1) && 'hide']"
   >
     <p>Cart ({{ cart }})</p>
     <!-- Delete cart -->
@@ -134,19 +128,19 @@ export default defineComponent({
       <img src="https://cdn.iconscout.com/icon/free/png-128/close-1767458-1502528.png" alt="">
     </button>
   </div>
-</section>
+</aside>
 
-<div class="product-display">
-  <div class="product-container">
+<main class="product-display">
+  <div class="product-container flex flex-row">
 
     <!-- Layout left -->
-    <div class="product-image">
+    <section class="product-image flex flex-col flex-center">
 
       <!-- Image -->
       <img :src="image" alt="Socks">
 
       <!-- Color selector -->
-      <div class="color-selector">
+      <div class="color-selector flex flex-row">
         <div
           v-for="variant in variants"
           :class="['color-selector-item', variant.color]"
@@ -160,21 +154,21 @@ export default defineComponent({
         label="Add to cart"
         shape="pill"
         size="lg"
-        theme="success"
+        theme="primary"
         :disabled="inventory - cart < 1"
         @click="addToCart"
       />
-    </div>
+    </section>
 
-    <div class="product-info">
+    <section class="product-info flex flex-col">
       <!-- Header -->
-      <header class="product-header">
+      <header class="product-header flex flex-row flex-top">
         <!-- Title -->
         <h1>{{ product }}</h1>
 
         <!-- In stock -->
         <p
-          :class="['stock', stockStatus]"
+          :class="['stock uppercase', stockStatus]"
         >{{ inStock }}</p>
       </header>
 
@@ -199,17 +193,17 @@ export default defineComponent({
       </ul>
 
       <!-- Size -->
-      <ul class="size">
+      <ul class="size flex flex-row">
         <li
           v-for="size in sizes"
-          :class="['size-item', size.selected && 'active']"
+          :class="['size-item text-center', size.selected && 'active']"
           @click="updateSize(size.value)"
         >
           {{ size.value.toUpperCase() }}
         </li>
       </ul>
 
-    </div>
+    </section>
   </div>
-</div>
+</main>
 </template>

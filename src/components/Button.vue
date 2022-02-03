@@ -48,13 +48,12 @@
 button {
   --color-text: #fff;
 
-  border: 1px solid transparent;
+  border: 1px solid currentColor;
   color: var(--color-text);
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
   line-height: 1;
-  width: fit-content;
 }
 button:disabled {
   opacity: .65;

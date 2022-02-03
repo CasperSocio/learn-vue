@@ -1,6 +1,12 @@
-node_modules
-.DS_Store
-dist
-dist-ssr
+# Directories
+/dist/
+/node_modules/
+/src/styles/css/
+
+# Filetypes
 *.local
+
+# Files
+.DS_Store
+dist-ssr
 package-lock.json
