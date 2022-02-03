@@ -23,7 +23,8 @@ header {
   color: #fff;
 }
 h1 {
-  font-size: 2.4rem;
-  padding: .4rem 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: .6rem 2rem;
 }
 </style>
