@@ -122,7 +122,8 @@ export default defineComponent({
 <aside class="top flex flex-row flex-end">
   <!-- Cart -->
   <div
-    :class="['cart flex flex-row flex-middle', (cart < 1) && 'hide']"
+    class="cart flex flex-row flex-middle"
+    :class="(cart < 1) && 'hide'"
   >
     <p>Cart ({{ cart }})</p>
     <!-- Delete cart -->
@@ -183,6 +184,7 @@ export default defineComponent({
         <Link
           href="https://www.redbubble.com/shop/vue"
           label="Redbubble"
+          external
         />
       </p>
 

@@ -1,29 +1,40 @@
 <script lang="ts">
-  import { defineComponent, PropType } from "vue";
+import { defineComponent } from "vue";
 
-  export default defineComponent({
-    props: {
-      href: String,
-      label: String
+export default defineComponent({
+  props: {
+    external: {
+      default: false,
+      required: false,
+      type: Boolean
+    },
+    href: {
+      required: true,
+      type: String
+    },
+    label: {
+      required: true,
+      type: String
     }
-  })
+  }
+})
 </script>
 
 <template>
-  <a
-    :href="href"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {{ label }}
-  </a>
+<a
+  :href="href"
+  :target="external ? '_blank' : ''"
+  :rel="external ? 'noopener noreferrer' : ''"
+>
+  {{ label }}
+</a>
 </template>
 
 <style>
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 </style>
