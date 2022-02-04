@@ -20,10 +20,17 @@ export default defineComponent({
 <HeaderLayout
   v-if="!noHeader"
   brand-name="Socio"
+  :routes="[
+      { label: 'Home', path: '/' },
+      { label: 'Shop', path: '/shop' },
+      { label: 'Posts', path: '/posts' },
+      { label: 'Dashboard', path: '/dashboard' },
+      { label: 'Product', path: '/product' },
+    ]"
 />
 
 <main class="flex flex-col flex-center">
-  <div class="container">
+  <div class="container debug">
     <slot></slot>
   </div>
 </main>

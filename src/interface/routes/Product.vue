@@ -177,10 +177,9 @@ export default defineComponent({
       <p>
         See more Vue products on
         <Link
-          href="https://www.redbubble.com/shop/vue"
-          label="Redbubble"
+          to="https://www.redbubble.com/shop/vue"
           external
-        />
+        >Redbubble</Link>
       </p>
 
       <!-- On sale -->

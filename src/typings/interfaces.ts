@@ -8,3 +8,8 @@ export interface InventoryItem {
   quantity: number
   size: TSize
 }
+
+export interface NavItem {
+  label: string
+  path: string
+}

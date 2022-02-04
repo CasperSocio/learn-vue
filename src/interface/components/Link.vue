@@ -8,11 +8,7 @@ export default defineComponent({
       required: false,
       type: Boolean
     },
-    href: {
-      required: true,
-      type: String
-    },
-    label: {
+    to: {
       required: true,
       type: String
     }
@@ -22,11 +18,11 @@ export default defineComponent({
 
 <template>
 <a
-  :href="href"
+  :href="to"
   :target="external ? '_blank' : ''"
   :rel="external ? 'noopener noreferrer' : ''"
 >
-  {{ label }}
+  <slot></slot>
 </a>
 </template>
 
