@@ -1,3 +1,5 @@
+import { InventoryItem } from "../typings/interfaces"
+
 const vueSocks = {
   name: 'Vue Socks',
   price: 6.99
@@ -12,7 +14,7 @@ const vueSocksGreen = {
   image: './assets/images/socks_green.jpg'
 }
 
-const inventory = [
+const inventory: InventoryItem[] = [
   {...vueSocksBlue, id: 1, size: 'xs', quantity: 0},
   {...vueSocksBlue, id: 2, size: 's', quantity: 3},
   {...vueSocksBlue, id: 3, size: 'm', quantity: 8},

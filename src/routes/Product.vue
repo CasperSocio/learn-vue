@@ -3,8 +3,8 @@ import { defineComponent } from 'vue'
 import { TSize } from '../typings/types'
 import Link from '../components/Link.vue'
 import Button from '../components/Button.vue'
-import Header from '../components/Header.vue'
 import Cart from '../features/cart/Cart.vue'
+import { HeaderLayout } from '../interface/layouts'
 
 type Size = SizeObject[]
 
@@ -109,15 +109,15 @@ export default defineComponent({
   },
   components: {
     Button,
+    Cart,
+    HeaderLayout,
     Link,
-    Header,
-    Cart
 }
 })
 </script>
 
 <template>
-<Header brand-name="Socio" />
+<HeaderLayout brand-name="Socio" />
 
 <aside class="top flex flex-row flex-end">
   <!-- Cart -->

@@ -1,9 +1,16 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
+import { DefaultView } from '../interface/views'
 
-export default defineComponent({})
+export default defineComponent({
+  components: {
+    DefaultView
+  }
+})
 </script>
 
 <template>
-<h1>Dashboard</h1>
+<DefaultView>
+  <h1>Dashboard</h1>
+</DefaultView>
 </template>
