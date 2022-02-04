@@ -1,30 +1,133 @@
-import { InventoryItem } from "../typings/interfaces"
+import { TSize } from "../typings/types"
 
-const vueSocks = {
-  name: 'Vue Socks',
-  price: 6.99
+interface Product {
+  displayImage: string
+  displayPrice: number
+  id: number
+  name: string
+  variants: ProductVariant[]
 }
 
-const vueSocksBlue = {
-  ...vueSocks,
-  image: './assets/images/socks_blue.jpg'
-}
-const vueSocksGreen = {
-  ...vueSocks,
-  image: './assets/images/socks_green.jpg'
+interface ProductVariant {
+  id: number
+  image: string
+  quantity: number
+  color?: string
+  price?: number
+  size?: TSize
 }
 
-const inventory: InventoryItem[] = [
-  {...vueSocksBlue, id: 1, size: 'xs', quantity: 0},
-  {...vueSocksBlue, id: 2, size: 's', quantity: 3},
-  {...vueSocksBlue, id: 3, size: 'm', quantity: 8},
-  {...vueSocksBlue, id: 4, size: 'l', quantity: 6},
-  {...vueSocksBlue, id: 5, size: 'xl', quantity: 1},
-  {...vueSocksGreen, id: 6, size: 'xs', quantity: 2},
-  {...vueSocksGreen, id: 7, size: 's', quantity: 5},
-  {...vueSocksGreen, id: 8, size: 'm', quantity: 16},
-  {...vueSocksGreen, id: 9, size: 'l', quantity: 12},
-  {...vueSocksGreen, id: 10, size: 'xl', quantity: 4},
+const products: Product[] = [
+  {
+    id: 1,
+    name: 'Vue Socks',
+    displayImage: './src/assets/images/socks_green.jpg',
+    displayPrice: 6.99,
+    variants: [
+      {
+        id: 1,
+        image: './src/assets/images/socks_blue.jpg',
+        quantity: 0,
+        size: 'xs'
+      },
+      {
+        id: 2,
+        image: './src/assets/images/socks_blue.jpg',
+        quantity: 3,
+        size: 's'
+      },
+      {
+        id: 3,
+        image: './src/assets/images/socks_blue.jpg',
+        quantity: 8,
+        size: 'm'
+      },
+      {
+        id: 4,
+        image: './src/assets/images/socks_blue.jpg',
+        quantity: 6,
+        size: 'l'
+      },
+      {
+        id: 5,
+        image: './src/assets/images/socks_blue.jpg',
+        quantity: 1,
+        size: 'xl'
+      },
+      {
+        id: 6,
+        image: './src/assets/images/socks_green.jpg',
+        quantity: 2,
+        size: 'xs'
+      },
+      {
+        id: 7,
+        image: './src/assets/images/socks_green.jpg',
+        quantity: 5,
+        size: 's'
+      },
+      {
+        id: 8,
+        image: './src/assets/images/socks_green.jpg',
+        quantity: 16,
+        size: 'm'
+      },
+      {
+        id: 9,
+        image: './src/assets/images/socks_green.jpg',
+        quantity: 12,
+        size: 'l'
+      },
+      {
+        id: 10,
+        image: './src/assets/images/socks_green.jpg',
+        quantity: 4,
+        size: 'xl'
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Hello World Hat',
+    displayImage: 'https://static-assets.codecademy.com/Courses/Learn-Redux/codecademy-store/hello-world-hat.jpg',
+    displayPrice: 23.99,
+    variants: []
+  },
+  {
+    id: 3,
+    name: 'Learn From Home Joggers',
+    displayImage: 'https://static-assets.codecademy.com/Courses/Learn-Redux/codecademy-store/sweatpants.jpg',
+    displayPrice: 45.99,
+    variants: []
+  },
+  {
+    id: 4,
+    name: 'Java Tee',
+    displayImage: 'https://static-assets.codecademy.com/Courses/Learn-Redux/codecademy-store/java-tee.jpg',
+    displayPrice: 17.99,
+    variants: []
+  },
+  {
+    id: 5,
+    name: 'Python Tee',
+    displayImage: 'https://static-assets.codecademy.com/Courses/Learn-Redux/codecademy-store/python-tee.jpg',
+    displayPrice: 17.99,
+    variants: []
+  },
+  {
+    id: 6,
+    name: 'SQL Tee',
+    displayImage: 'https://static-assets.codecademy.com/Courses/Learn-Redux/codecademy-store/sql-tee.jpg',
+    displayPrice: 17.99,
+    variants: []
+  },
+  {
+    id: 7,
+    name: 'Hello World Hoodie',
+    displayImage: 'https://static-assets.codecademy.com/Courses/Learn-Redux/codecademy-store/hoodie.jpg',
+    displayPrice: 49.99,
+    variants: []
+  }
 ]
 
-export default inventory
+export default products

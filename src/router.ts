@@ -1,32 +1,45 @@
 import { Component } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import Dashboard from './routes/Dashboard.vue'
-import Home from './routes/Home.vue'
-import Posts from './routes/Posts.vue'
-import Product from './routes/Product.vue'
+import {
+  DashboardRoute,
+  HomeRoute,
+  PostsRoute,
+  ProductRoute,
+  ShopRoute
+} from './interface/routes'
 
 interface Route {
   component: Component
+  name: string
   path: string
 }
 
 const routes: Route[] = [
   {
+    name: 'Home',
     path: '/',
-    component: Home
+    component: HomeRoute
   },
   {
+    name: 'Dashboard',
     path: '/dashboard',
-    component: Dashboard
+    component: DashboardRoute
   },
   {
+    name: 'Posts',
     path: '/posts',
-    component: Posts
+    component: PostsRoute
   },
   {
+    name: 'Product',
     path: '/product',
-    component: Product
+    component: ProductRoute
   },
+  {
+    name: 'Shop',
+    path: '/shop',
+    component: ShopRoute
+  }
 ]
 
 export default createRouter({

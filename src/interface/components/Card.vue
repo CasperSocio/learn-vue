@@ -7,6 +7,14 @@ export default defineComponent({
       required: false,
       type: String
     },
+    img: {
+      required: false,
+      type: String
+    },
+    imgAlt: {
+      required: false,
+      type: String
+    }
   }
 })
 </script>
@@ -14,6 +22,12 @@ export default defineComponent({
 <template>
 <article class="Card flex flex-col">
   <main class="Card--content flex flex-col">
+    <img
+      v-if="img"
+      class="Card--image"
+      :src="img"
+      :alt="imgAlt"
+    >
     <h5 v-if="heading">{{ heading }}</h5>
     <slot></slot>
   </main>
@@ -22,10 +36,12 @@ export default defineComponent({
 
 <style>
 .Card {
-  --border: 1px solid slategray;
+  --border: 1px solid lightgray;
 
+  background-color: #fff;
   border: var(--border);
   border-radius: .25rem;
+  min-width: 300px;
   padding: 0;
 }
 .Card > * {
@@ -35,7 +51,6 @@ export default defineComponent({
   gap: 1rem;
 }
 .Card--content p {
-  line-height: 1;
   margin: 0;
 }
 .Card--content h5 {

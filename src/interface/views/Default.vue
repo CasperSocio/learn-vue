@@ -28,3 +28,9 @@ export default defineComponent({
   </div>
 </main>
 </template>
+
+<style scoped>
+main {
+  margin: 2rem 1rem;
+}
+</style>
