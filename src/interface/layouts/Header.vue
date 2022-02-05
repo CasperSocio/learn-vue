@@ -16,13 +16,18 @@ export default defineComponent({
       required: true,
       type: Array as PropType<NavItem[]>
     },
+    wide: {
+      default: false,
+      required: false,
+      type: Boolean
+    }
   }
 })
 </script>
 
 <template>
 <header class="Header flex flex-col flex-center">
-  <div class="container flex flex-row">
+  <div :class="['flex flex-row', wide ? 'container-full' : 'container']">
     <h1 class="Header-brand">{{ brandName }}</h1>
     <NavMenu :routes="routes" row />
   </div>

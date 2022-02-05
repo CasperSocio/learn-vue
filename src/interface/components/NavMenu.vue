@@ -3,11 +3,18 @@ import { defineComponent, PropType } from 'vue'
 import { RouterLink } from 'vue-router'
 import { NavItem } from '../../typings/interfaces'
 
+type NavMenuAlign = 'center' | 'left' | 'right'
+
 export default defineComponent({
   components: {
     RouterLink
   },
   props: {
+    align: {
+      default: 'center',
+      required: false,
+      type: String as PropType<NavMenuAlign>
+    },
     routes: {
       required: true,
       type: Array as PropType<NavItem[]>
@@ -22,10 +29,18 @@ export default defineComponent({
 </script>
 
 <template>
-<nav class="NavMenu" :class="row ? 'row' : 'col'">
+<nav :class="['NavMenu', row ? 'NavMenu-row' : 'NavMenu-col']">
   <ul class="NavMenu-list">
     <li v-for="route in routes" class="NavItem">
+      <a
+        v-if="route.external"
+        class="NavItem-link"
+        :href="route.path"
+        target="_blank"
+        rel="noopener noreferrer"
+      >{{ route.label }}</a>
       <RouterLink
+        v-else
         class="NavItem-link"
         :to="route.path"
       >{{ route.label }}</RouterLink>
@@ -40,10 +55,10 @@ export default defineComponent({
   max-width: 100%;
   overflow: hidden;
 }
-.NavMenu.col {
+.NavMenu-col {
   overflow-y: scroll;
 }
-.NavMenu.row {
+.NavMenu-row {
   display: flex;
   margin: 0 auto;
   overflow-x: scroll;
@@ -54,10 +69,10 @@ export default defineComponent({
   list-style: none;
   margin: 0;
 }
-.NavMenu.col .NavMenu-list {
+.NavMenu-col .NavMenu-list {
   flex-direction: column;
 }
-.NavMenu.row .NavMenu-list {
+.NavMenu-row .NavMenu-list {
   display: flex;
   flex-direction: row;
 }
@@ -69,11 +84,11 @@ export default defineComponent({
   background-color: rgba(0, 0, 0, .1);
   text-decoration: none;
 }
-.NavMenu.col .NavItem-link {
+.NavMenu-col .NavItem-link {
   display: block;
   padding: .4rem;
 }
-.NavMenu.row .NavItem-link {
+.NavMenu-row .NavItem-link {
   display: flex;
   flex-direction: column;
   height: 100%;

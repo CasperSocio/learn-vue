@@ -12,4 +12,5 @@ export interface InventoryItem {
 export interface NavItem {
   label: string
   path: string
+  external?: boolean
 }

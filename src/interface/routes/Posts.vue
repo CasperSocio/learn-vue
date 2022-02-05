@@ -27,7 +27,7 @@ export default defineComponent({
 
 <template>
 <h1>Posts</h1>
-<div class="posts flex debug">
+<div class="posts flex">
   <Card
     v-for="post in posts"
     :heading="post.title"

@@ -21,16 +21,18 @@ export default defineComponent({
   v-if="!noHeader"
   brand-name="Socio"
   :routes="[
-      { label: 'Home', path: '/' },
-      { label: 'Shop', path: '/shop' },
-      { label: 'Posts', path: '/posts' },
-      { label: 'Dashboard', path: '/dashboard' },
-      { label: 'Product', path: '/product' },
-    ]"
+    { label: 'Home', path: '/' },
+    { label: 'Shop', path: '/shop' },
+    { label: 'Posts', path: '/posts' },
+    { label: 'Dashboard', path: '/dashboard' },
+    { label: 'Product', path: '/product' },
+    { label: 'GitHub', path: 'https://github.com/Socio-Development', external: true },
+  ]"
+  wide
 />
 
 <main class="flex flex-col flex-center">
-  <div class="container debug">
+  <div class="container">
     <slot></slot>
   </div>
 </main>

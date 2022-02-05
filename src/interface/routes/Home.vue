@@ -23,7 +23,7 @@ export default defineComponent({
 <template>
 <h1>Home</h1>
 <TextSection>
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dignissimos dolor quidem commodi nesciunt odio deserunt optio doloribus labore quasi mollitia deleniti voluptate perferendis veritatis natus dolorum, enim necessitatibus aut!
+  <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dignissimos dolor quidem commodi nesciunt odio.</p>
 </TextSection>
 <section class="Navigation">
   <NavMenu
