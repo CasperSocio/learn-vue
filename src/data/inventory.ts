@@ -1,26 +1,11 @@
-import { TSize } from "../typings/types"
-
-interface Product {
-  displayImage: string
-  displayPrice: number
-  id: number
-  name: string
-  variants: ProductVariant[]
-}
-
-interface ProductVariant {
-  id: number
-  image: string
-  quantity: number
-  color?: string
-  price?: number
-  size?: TSize
-}
+import { Product } from '../typings/interfaces'
 
 const products: Product[] = [
   {
     id: 1,
     name: 'Vue Socks',
+    description: "These Vue socks will make sure you're looking stylish while creating the future",
+    details: ["50% cotton", "30% wool", "20% polyester"],
     displayImage: './src/assets/images/socks_green.jpg',
     displayPrice: 6.99,
     variants: [

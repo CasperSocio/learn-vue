@@ -93,7 +93,7 @@ export default defineComponent({
       }
     },
     resetCart() {
-      this.cart = 0;
+      this.cart = 0
     },
     updateImage(path: string) {
       this.image = path;

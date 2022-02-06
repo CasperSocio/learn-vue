@@ -1,15 +1,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Card } from '../components'
-import products from '../../data/inventory'
+import { dispatch, useStore } from '../../store'
 
 export default defineComponent({
+  setup() {
+    const store = useStore()
+    dispatch('inventoryLoadData')
+  },
   components: {
     Card
-  },
-  data: () => ({
-    products
-  })
+  }
 })
 </script>
 
@@ -19,11 +20,11 @@ export default defineComponent({
   <h2>Products</h2>
   <div class="Products flex">
     <Card
-      v-for="product in products"
-      :heading="product.name"
-      :img="product.displayImage"
+      v-for="item in $store.state.inventory.allItems"
+      :heading="item.name"
+      :img="item.displayImage"
     >
-      <p class="Products-price">$ {{ product.displayPrice.toFixed(2) }}</p>
+      <p class="Products-price">$ {{ item.displayPrice.toFixed(2) }}</p>
     </Card>
   </div>
 </section>
