@@ -1,8 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Card } from '../components'
-import { dispatch, useStore } from '../../store'
 import { useRouter } from 'vue-router'
+import { dispatch, useStore } from '../../store'
+import { Card } from '../components'
+import { WrapperHeader } from '../sections'
 
 export default defineComponent({
   setup() {
@@ -11,7 +12,8 @@ export default defineComponent({
     dispatch('inventoryLoadData')
   },
   components: {
-    Card
+    Card,
+    WrapperHeader
   },
   methods: {
     handleItemClick(id: number) {
@@ -22,7 +24,7 @@ export default defineComponent({
 </script>
 
 <template>
-<h1>Shop</h1>
+<WrapperHeader>Shop</WrapperHeader>
 <section>
   <h2>Products</h2>
   <div class="Products flex">
