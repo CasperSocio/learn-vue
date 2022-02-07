@@ -6,17 +6,17 @@ import { WrapperHeader } from '../../sections'
 import { Button } from '../../components'
 
 export default defineComponent({
-    components: {
-      Button,
-      WrapperHeader
-    },
-    setup() {
-        const route = useRoute();
-        const product = products.find(item => item.id === Number(route.params.id));
-        return {
-            product
-        };
-    }
+  components: {
+    Button,
+    WrapperHeader
+  },
+  setup() {
+    const route = useRoute();
+    const product = products.find(item => item.id === Number(route.params.id));
+    return {
+      product
+    };
+  }
 })
 </script>
 

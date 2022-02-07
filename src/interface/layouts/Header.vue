@@ -57,7 +57,7 @@ export default defineComponent({
         <!-- Hamburger icon -->
         <img
           class="Header--nav-icon"
-          src="/src/assets/icons/hamburger.svg"
+          src="/src/interface/assets/icons/hamburger.svg"
           alt="Menu icon"
         >
       </button>
@@ -95,6 +95,8 @@ export default defineComponent({
 .Header {
   background-color: var(--primary);
   color: white;
+  display: flex;
+  flex-direction: column;
   min-height: var(--header-height);
   position: relative;
   width: 100%;

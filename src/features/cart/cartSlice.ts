@@ -1,5 +1,5 @@
 import { Module } from 'vuex'
-import { RootState } from '../../store';
+import { RootState } from '../../app/store';
 import { Product } from '../../typings/interfaces';
 
 export interface CartState {

@@ -62,12 +62,12 @@ export default defineComponent({
       {
         id: 2234,
         color: "green",
-        image: "./src/assets/images/socks_green.jpg"
+        image: "/src/interface/assets/images/socks_green.jpg"
       },
       {
         id: 2235,
         color: "blue",
-        image: "./src/assets/images/socks_blue.jpg"
+        image: "/src/interface/assets/images/socks_blue.jpg"
       }
     ]
   }),

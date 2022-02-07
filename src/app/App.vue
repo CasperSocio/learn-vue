@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useRoute } from 'vue-router'
-import { DefaultView } from './interface/views'
+import { DefaultView } from '../interface/views'
 
 export default defineComponent({
   components: {
