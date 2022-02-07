@@ -19,6 +19,7 @@ export default defineComponent({
 
 <template>
 <router-view v-if="route.name === 'Views'" />
+
 <DefaultView v-else>
   <router-view />
 </DefaultView>
