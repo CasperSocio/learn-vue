@@ -7,15 +7,14 @@ export default defineComponent({
     setup() {
         const menuItems = ref([
             { label: "Home", path: "/" },
-            { label: "Shop", path: "/shop" }
+            { label: "Shop", path: "/shop" },
+            { label: 'Posts', path: '/posts' },
+            { label: 'Product', path: '/product' },
         ]);
         const navIsCollapsed = ref(true);
         const windowWidth = ref(window.innerWidth);
         function collapseNav() {
             navIsCollapsed.value = true;
-        }
-        function openNav() {
-            navIsCollapsed.value = false;
         }
         function toggleNav() {
             navIsCollapsed.value = !navIsCollapsed.value;
@@ -24,7 +23,6 @@ export default defineComponent({
             collapseNav,
             menuItems,
             navIsCollapsed,
-            openNav,
             toggleNav,
             windowWidth
         };
@@ -71,8 +69,20 @@ export default defineComponent({
         @mouseleave="collapseNav"
       >
         <li v-for="item in menuItems" class="Header--nav-item">
-          <DebugFrame label=".Header--nav-list li" position="right" />
-          <RouterLink :to="item.path">{{ item.label }}</RouterLink>
+          <RouterLink :to="item.path">
+            <DebugFrame label=".Header--nav-list a" position="right" />
+            {{ item.label }}
+          </RouterLink>
+        </li>
+        <li class="Header--nav-item">
+          <a
+            href="https://github.com/Socio-Development"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <DebugFrame label=".Header--nav-list a" position="right" />
+            GitHub
+          </a>
         </li>
       </ul>
     </nav>
@@ -89,6 +99,7 @@ export default defineComponent({
   position: relative;
   width: 100%;
 }
+
 .Header--brand {
   align-items: center;
   color: white;
@@ -118,9 +129,7 @@ export default defineComponent({
   margin: 0 auto;
   max-width: var(--page-width);
 }
-.Header--content-wide {
-
-}
+.Header--content-wide {}
 
 .Header--nav {
   height: 100%;
@@ -128,6 +137,7 @@ export default defineComponent({
   min-width: var(--header-height);
   position: relative;
 }
+
 .Header--nav-btn {
   background-color: transparent;
   border: none;
@@ -145,6 +155,19 @@ export default defineComponent({
   height: 100%;
   width: auto;
 }
+
+.Header--nav-list {
+  background-color: white;
+  color: black;
+  margin: 0;
+  max-width: calc(var(--page-width) / 2);
+  min-width: fit-content;
+  width: 50vw;
+  position: absolute;
+  top: var(--header-height); right: 0;
+  z-index: 100;
+}
+
 .Header--nav-item {
   position: relative;
 }
@@ -156,17 +179,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   padding: 1rem;
-}
-.Header--nav-list {
-  background-color: white;
-  color: black;
-  margin: 0;
-  max-width: calc(var(--page-width) / 2);
-  min-width: fit-content;
-  width: 50vw;
-  position: absolute;
-  top: var(--header-height); right: 0;
-  z-index: 100;
+  position: relative;
 }
 
 @media screen and (min-width: 916px) {

@@ -1,15 +1,11 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { RouterLink } from 'vue-router'
-import { DebugFrame } from '../components'
 import { FooterLayout, HeaderLayout, WrapperLayout } from '../layouts'
 
 export default defineComponent({
   components: {
-    DebugFrame,
     FooterLayout,
     HeaderLayout,
-    RouterLink,
     WrapperLayout
   }
 })
@@ -19,7 +15,7 @@ export default defineComponent({
 <HeaderLayout />
 
 <WrapperLayout>
-  
+
 </WrapperLayout>
 
 <FooterLayout />

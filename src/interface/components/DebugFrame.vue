@@ -1,22 +1,9 @@
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { useRoute } from 'vue-router'
+import { defineComponent, PropType, ref } from 'vue'
 
 type TextAlign = 'center' | 'left' | 'right'
 
 export default defineComponent({
-  data: () => ({
-    debug: false,
-    showingLabel: false
-  }),
-  methods: {
-    hideLabel() {
-      this.showingLabel = false
-    },
-    showLabel() {
-      this.showingLabel = true
-    }
-  },
   props: {
     label: {
       type: String
@@ -28,11 +15,18 @@ export default defineComponent({
     }
   },
   setup() {
-    const route = useRoute()
-    if (route.query['debug'] === 'true') {
-      return {
-        debug: true
-      }
+    const showingLabel = ref(false)
+
+    function hideLabel() {
+      showingLabel.value = false
+    }
+    function showLabel() {
+      showingLabel.value = true
+    }
+    return {
+      hideLabel,
+      showingLabel,
+      showLabel
     }
   }
 })
@@ -40,13 +34,13 @@ export default defineComponent({
 
 <template>
 <div
-  v-if="debug"
+  v-if="$route.query.debug === 'true'"
   class="DebugFrame"
   @mouseenter="showLabel"
   @mouseleave="hideLabel"
 ></div>
 <p
-  v-if="debug && showingLabel"
+  v-if="$route.query.debug === 'true' && showingLabel"
   :class="['DebugFrame--label', `DebugFrame--label-${position}`]"
 >
   {{ label }}
@@ -57,7 +51,6 @@ export default defineComponent({
 .DebugFrame {
   border: 6px solid salmon;
   opacity: 0;
-  pointer-events: all;
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 50;

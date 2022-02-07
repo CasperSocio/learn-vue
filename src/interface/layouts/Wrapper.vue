@@ -28,7 +28,6 @@ export default defineComponent({
   width: 100%;
 }
 .Wrapper--content {
-  background-color: skyblue;
   height: 100%;
   margin: 0 auto;
   max-width: var(--page-width);
