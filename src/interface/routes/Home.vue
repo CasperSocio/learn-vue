@@ -2,29 +2,19 @@
 import { defineComponent } from 'vue'
 import { NavMenu } from '../components'
 import { TextSection } from '../sections'
-import products from '../../data/inventory'
-
-interface State {}
 
 export default defineComponent({
-  data: () => ({
-    products,
-    routes: [
-      {  }
-    ]
-  }),
   components: {
     NavMenu,
     TextSection
-}
+  }
 })
 </script>
 
 <template>
 <h1>Home</h1>
-<TextSection>
-  <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dignissimos dolor quidem commodi nesciunt odio.</p>
-</TextSection>
+<p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dignissimos dolor quidem commodi nesciunt odio.</p>
+
 <section class="Navigation">
   <NavMenu
     :routes="[
