@@ -1,20 +1,19 @@
 import { Module } from 'vuex'
-import { Product } from '../../typings/interfaces'
-import products from '../../data/inventory'
-import { StoreAction } from '../../typings/types'
 import { RootState } from '..'
+import products from '../../data/inventory'
+import { Product } from '../../typings/interfaces'
 
 export interface InventoryState {
-  allItems: Product[]
+  items: Product[]
 }
 
 export const inventory: Module<InventoryState, RootState> = {
   state: {
-    allItems: []
+    items: []
   },
   mutations: {
     inventoryLoadData(state: InventoryState) {
-      state.allItems = products
+      state.items = products
     }
   }
 }

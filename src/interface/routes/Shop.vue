@@ -2,14 +2,21 @@
 import { defineComponent } from 'vue'
 import { Card } from '../components'
 import { dispatch, useStore } from '../../store'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup() {
+    const router = useRouter()
     const store = useStore()
     dispatch('inventoryLoadData')
   },
   components: {
     Card
+  },
+  methods: {
+    handleItemClick(id: number) {
+      this.$router.push({ path: `/shop/${id}` })
+    }
   }
 })
 </script>
@@ -20,9 +27,10 @@ export default defineComponent({
   <h2>Products</h2>
   <div class="Products flex">
     <Card
-      v-for="item in $store.state.inventory.allItems"
+      v-for="item in $store.state.inventory.items"
       :heading="item.name"
       :img="item.displayImage"
+      @click="handleItemClick(item.id)"
     >
       <p class="Products-price">$ {{ item.displayPrice.toFixed(2) }}</p>
     </Card>

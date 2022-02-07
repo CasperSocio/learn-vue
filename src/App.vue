@@ -1,8 +1,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
 import { DefaultView } from './interface/views'
 
 export default defineComponent({
+  setup() {
+    const route = useRoute()
+    console.log(route.name)
+    return {
+      route
+    }
+  },
   components: {
     DefaultView
   }
@@ -10,7 +18,8 @@ export default defineComponent({
 </script>
 
 <template>
-<DefaultView>
+<router-view v-if="route.name === 'Views'" />
+<DefaultView v-else>
   <router-view />
 </DefaultView>
 </template>

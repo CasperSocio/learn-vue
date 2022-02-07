@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+svg {
+  display: block;
+}
+
 #app {
   display: flex;
   flex-direction: column;

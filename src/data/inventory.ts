@@ -6,66 +6,66 @@ const products: Product[] = [
     name: 'Vue Socks',
     description: "These Vue socks will make sure you're looking stylish while creating the future",
     details: ["50% cotton", "30% wool", "20% polyester"],
-    displayImage: './src/assets/images/socks_green.jpg',
+    displayImage: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-green-onWhite.jpg',
     displayPrice: 6.99,
     variants: [
       {
         id: 1,
-        image: './src/assets/images/socks_blue.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-blue-onWhite.jpg',
         quantity: 0,
         size: 'xs'
       },
       {
         id: 2,
-        image: './src/assets/images/socks_blue.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-blue-onWhite.jpg',
         quantity: 3,
         size: 's'
       },
       {
         id: 3,
-        image: './src/assets/images/socks_blue.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-blue-onWhite.jpg',
         quantity: 8,
         size: 'm'
       },
       {
         id: 4,
-        image: './src/assets/images/socks_blue.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-blue-onWhite.jpg',
         quantity: 6,
         size: 'l'
       },
       {
         id: 5,
-        image: './src/assets/images/socks_blue.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-blue-onWhite.jpg',
         quantity: 1,
         size: 'xl'
       },
       {
         id: 6,
-        image: './src/assets/images/socks_green.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-green-onWhite.jpg',
         quantity: 2,
         size: 'xs'
       },
       {
         id: 7,
-        image: './src/assets/images/socks_green.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-green-onWhite.jpg',
         quantity: 5,
         size: 's'
       },
       {
         id: 8,
-        image: './src/assets/images/socks_green.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-green-onWhite.jpg',
         quantity: 16,
         size: 'm'
       },
       {
         id: 9,
-        image: './src/assets/images/socks_green.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-green-onWhite.jpg',
         quantity: 12,
         size: 'l'
       },
       {
         id: 10,
-        image: './src/assets/images/socks_green.jpg',
+        image: 'https://vue-store-page-demo.netlify.app/assets/vmSocks-green-onWhite.jpg',
         quantity: 4,
         size: 'xl'
       }

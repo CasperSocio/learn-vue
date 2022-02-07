@@ -5,16 +5,22 @@ import {
   HomeRoute,
   PostsRoute,
   ProductRoute,
-  ShopRoute
+  ShopProductRoute,
+  ShopRoute,
+  ViewsRoute
 } from './interface/routes'
 
 interface Route {
   component: Component
-  name: string
+  name?: string
   path: string
 }
 
-const routes: Route[] = [
+interface MainRoute extends Route {
+  children?: Route[]
+}
+
+const routes: MainRoute[] = [
   {
     name: 'Home',
     path: '/',
@@ -39,6 +45,15 @@ const routes: Route[] = [
     name: 'Shop',
     path: '/shop',
     component: ShopRoute
+  },
+  {
+    path: '/shop/:id',
+    component: ShopProductRoute
+  },
+  {
+    name: 'Views',
+    path: '/views',
+    component: ViewsRoute
   }
 ]
 

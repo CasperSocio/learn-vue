@@ -1,5 +1,6 @@
 export type StoreAction =
   | 'inventoryLoadData'
+  | 'inventoryLoadItem'
 
 export type TSize =
   | 'l'

@@ -29,6 +29,6 @@ export function useStore() {
  * See `src/typings/types.ts` for the available actions.
  * @param action Pre-defined actions
  */
-export function dispatch(action: StoreAction) {
-  return store.commit(action)
+export function dispatch(action: StoreAction, payload?: any) {
+  return store.commit(action, payload)
 }
