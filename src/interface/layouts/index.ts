@@ -1,5 +1,9 @@
+import FooterLayout from './Footer.vue'
 import HeaderLayout from './Header.vue'
+import WrapperLayout from './Wrapper.vue'
 
 export {
-  HeaderLayout
+  FooterLayout,
+  HeaderLayout,
+  WrapperLayout
 }
