@@ -65,6 +65,21 @@
   color: var(--primary);
 }
 
+.row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 916px) {
+  .row {
+    justify-content: flex-start;
+  }
+}
+
 .show {
   visibility: visible;
 }

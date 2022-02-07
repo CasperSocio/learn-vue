@@ -2,7 +2,7 @@ import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
 import { search, SearchState } from '../features/search/searchSlice'
 import { StoreAction } from '../typings/types'
-import { cart, CartState } from './modules/cart'
+import { cart, CartState } from '../features/cart/cartSlice'
 import { inventory, InventoryState } from './modules/inventory'
 
 export interface RootState {

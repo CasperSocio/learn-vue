@@ -204,7 +204,6 @@ export default defineComponent({
     </section>
   </div>
 </main>
-<Cart />
 </template>
 
 <style scoped>

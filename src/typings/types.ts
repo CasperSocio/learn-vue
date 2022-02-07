@@ -1,4 +1,7 @@
 export type StoreAction =
+  | 'cartAddItem'
+  | 'cartRemoveItem'
+  | 'cartReset'
   | 'inventoryLoadData'
   | 'inventoryLoadItem'
   | 'searchUpdateQuery'
