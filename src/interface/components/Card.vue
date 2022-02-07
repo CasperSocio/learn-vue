@@ -61,6 +61,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1rem;
   position: relative;
 }
 
@@ -74,19 +75,22 @@ export default defineComponent({
 }
 
 .Card--title {
+  align-items: center;
+  display: flex;
+  height: 100%;
   position: relative;
 }
 .Card--title h5 {
   font-size: 1.4rem;
   margin: 0;
-  padding: 0 1rem;
 }
 
 .Card--content {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-bottom: 1rem;
   margin-top: auto;
-  padding: 0 1rem;
   position: relative;
 }
 .Card--content > * {

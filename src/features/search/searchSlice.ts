@@ -17,8 +17,10 @@ export const search: Module<SearchState, RootState> = {
     searchUpdateQuery(state: SearchState, payload: string) {
       state.query = payload
       state.matchingInventory = inventory.filter(item => {
-        const searchWords: string = item.name + ' ' + item.description
-        return searchWords.toLowerCase().match(payload.toLowerCase())
+        const searchWords = (item.name.toLowerCase() + ' ' + item.description?.toLowerCase()).split(' ').filter((value, index, arr) => {
+          return arr.indexOf(value) === index
+        }).join(' ')
+        return searchWords.match(payload.toLowerCase())
       })
     }
   }
