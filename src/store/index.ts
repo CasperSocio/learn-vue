@@ -1,5 +1,6 @@
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
+import { search, SearchState } from '../features/search/searchSlice'
 import { StoreAction } from '../typings/types'
 import { cart, CartState } from './modules/cart'
 import { inventory, InventoryState } from './modules/inventory'
@@ -7,13 +8,15 @@ import { inventory, InventoryState } from './modules/inventory'
 export interface RootState {
   cart: CartState
   inventory: InventoryState
+  search: SearchState
 }
 
 export const key: InjectionKey<Store<RootState>> = Symbol()
 
 const modules = {
   cart,
-  inventory
+  inventory,
+  search
 }
 
 export const store = createStore<RootState>({

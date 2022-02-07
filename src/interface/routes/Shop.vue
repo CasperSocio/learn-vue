@@ -1,23 +1,30 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { dispatch, useStore } from '../../store'
 import { Card } from '../components'
 import { WrapperHeader } from '../sections'
+import Search from '../../features/search/Search.vue'
 
 export default defineComponent({
+  components: {
+    Card,
+    WrapperHeader,
+    Search
+  },
   setup() {
     const router = useRouter()
     const store = useStore()
-    dispatch('inventoryLoadData')
-  },
-  components: {
-    Card,
-    WrapperHeader
-  },
-  methods: {
-    handleItemClick(id: number) {
-      this.$router.push({ path: `/shop/${id}` })
+
+    const inventory = ref(store.state.search.matchingInventory)
+
+    function handleItemClick(id: number) {
+      router.push({ path: `/shop/${id}` })
+    }
+
+    return {
+      handleItemClick,
+      inventory
     }
   }
 })
@@ -25,19 +32,14 @@ export default defineComponent({
 
 <template>
 <section>
-  <input
-    type="text"
-    name="search"
-    id="search"
-    placeholder="Search"
-  >
+  <Search />
 </section>
 
 <section>
   <h2>Products</h2>
   <div class="Inventory">
     <Card
-      v-for="item in $store.state.inventory.items"
+      v-for="item in $store.state.search.matchingInventory"
       :title="item.name"
       :image="item.displayImage"
       @click="handleItemClick(item.id)"
@@ -49,13 +51,6 @@ export default defineComponent({
 </template>
 
 <style>
-#search {
-  border: 1px solid lightgray;
-  border-radius: 10rem;
-  font-size: 1rem;
-  padding: .6rem 1.2rem;
-}
-
 .Inventory {
   cursor: pointer;
   display: grid;
