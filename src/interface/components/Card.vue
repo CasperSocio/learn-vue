@@ -1,17 +1,21 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { DebugFrame } from '.'
 
 export default defineComponent({
+  components: {
+    DebugFrame
+  },
   props: {
-    heading: {
+    title: {
       required: false,
       type: String
     },
-    img: {
+    image: {
       required: false,
       type: String
     },
-    imgAlt: {
+    imageAlt: {
       required: false,
       type: String
     }
@@ -20,41 +24,72 @@ export default defineComponent({
 </script>
 
 <template>
-<article class="Card flex flex-col">
-  <main class="Card--content flex flex-col">
-    <img
-      v-if="img"
-      class="Card--image"
-      :src="img"
-      :alt="imgAlt"
-    >
-    <h5 v-if="heading">{{ heading }}</h5>
+<article class="Card">
+  <DebugFrame label=".Card" />
+
+  <!-- Image -->
+  <div
+    v-if="image"
+    class="Card--image"
+  >
+    <DebugFrame label=".Card--image" />
+    <img :src="image" :alt="imageAlt">
+  </div>
+
+  <!-- Title -->
+  <header
+    v-if="title"
+    class="Card--title"
+  >
+    <DebugFrame label=".Card--title" />
+    <h5>{{ title }}</h5>
+  </header>
+
+  <!-- Content -->
+  <div class="Card--content">
+    <DebugFrame label=".Card--content" />
     <slot></slot>
-  </main>
+  </div>
 </article>
 </template>
 
 <style>
 .Card {
-  --border: 1px solid lightgray;
-
   background-color: #fff;
-  border: var(--border);
+  border: 1px solid lightgray;
   border-radius: .25rem;
-  min-width: 300px;
-  padding: 0;
-}
-.Card > * {
-  padding: 1rem;
-}
-.Card--content {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  position: relative;
 }
-.Card--content p {
+
+.Card--image {
+  display: flex;
+  position: relative;
+}
+.Card--image img {
+  border-radius: .25rem;
+  max-width: 100%;
+}
+
+.Card--title {
+  position: relative;
+}
+.Card--title h5 {
+  font-size: 1.4rem;
   margin: 0;
+  padding: 0 1rem;
 }
-.Card--content h5 {
-  font-size: 1.2rem;
+
+.Card--content {
+  display: flex;
+  margin-bottom: 1rem;
+  margin-top: auto;
+  padding: 0 1rem;
+  position: relative;
+}
+.Card--content > * {
   margin: 0;
 }
 </style>

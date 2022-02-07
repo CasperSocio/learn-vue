@@ -24,36 +24,61 @@ export default defineComponent({
 </script>
 
 <template>
-<WrapperHeader>Shop</WrapperHeader>
+<section>
+  <input
+    type="text"
+    name="search"
+    id="search"
+    placeholder="Search"
+  >
+</section>
+
 <section>
   <h2>Products</h2>
-  <div class="Products flex">
+  <div class="Inventory">
     <Card
       v-for="item in $store.state.inventory.items"
-      :heading="item.name"
-      :img="item.displayImage"
+      :title="item.name"
+      :image="item.displayImage"
       @click="handleItemClick(item.id)"
     >
-      <p class="Products-price">$ {{ item.displayPrice.toFixed(2) }}</p>
+      <p class="Inventory--price">$ {{ item.displayPrice.toFixed(2) }}</p>
     </Card>
   </div>
 </section>
 </template>
 
 <style>
-.Products {
-  flex-wrap: wrap;
+#search {
+  border: 1px solid lightgray;
+  border-radius: 10rem;
+  font-size: 1rem;
+  padding: .6rem 1.2rem;
+}
+
+.Inventory {
+  cursor: pointer;
+  display: grid;
   gap: 1rem;
 }
-.Products > * {
-  max-width: 25%;
-  cursor: pointer;
+.Inventory > article:hover {
+  border-color: var(--primary);
 }
-.Products > *:hover {
-  outline: 1px solid var(--link);
+
+.Inventory--price {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
-.Products-price {
-  font-size: 1.2rem;
-  font-weight: 800;
+
+@media screen and (min-width: 576px) {
+  .Inventory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 916px) {
+  .Inventory {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>

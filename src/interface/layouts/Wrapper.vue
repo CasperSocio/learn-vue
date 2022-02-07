@@ -23,7 +23,7 @@ export default defineComponent({
 <style scoped>
 .Wrapper {
   height: 100%;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
   position: relative;
   width: 100%;
 }

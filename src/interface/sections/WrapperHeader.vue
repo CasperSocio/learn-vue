@@ -20,7 +20,9 @@ export default defineComponent({
 
 <style scoped>
 .Wrapper--header {
-  margin-top: 2rem;
   position: relative;
+}
+.Wrapper--header h1 {
+  margin: 0;
 }
 </style>
