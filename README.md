@@ -1,5 +1,7 @@
 # Learn Vue
 
+> This repo has been archived due to lack of activity.
+
 This is not a resource for learnig, but a place for me to explore Vue.
 
 ## Getting started
